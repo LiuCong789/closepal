@@ -1,0 +1,177 @@
+/* General Styles for Modern Look */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Chat Container */
+.chat-container {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 576px;
+
+  margin: 20px auto;
+}
+
+/* Header and Footer */
+.chat-header,
+.chat-footer {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.chat-header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* background-color: rgba(52, 53, 65, 0.95); */
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  color: #ffffff;
+}
+
+.chat-footer {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 0.75rem;
+  background-color: rgba(52, 53, 65, 0.95);
+  color: #e4e2e2;
+}
+
+.chat-history {
+  min-height: 300px; /* Set a minimum height */
+  height: auto; /* Height adjusts to content */
+  overflow-y: auto; /* Enable scrolling when content exceeds height */
+  border: 1px solid #dedede;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Chat Bubble Styles */
+.chat-history p {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.user-message {
+  background-color: #e6f3ff;
+  text-align: left;
+}
+
+.assistant-message {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+.user-message b,
+.assistant-message b {
+  margin-right: 10px;
+}
+
+/* Input Area Enhancement */
+.input-area {
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+}
+
+.input-area input[type="text"] {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-right: 5px;
+  flex-grow: 1;
+}
+
+/* Align Send Button with Input */
+.input-area button {
+  background-color: #30b5d6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #2874a6;
+}
+
+.input-area button:disabled {
+  background-color: #a2d1e6;
+  color: #ffffff;
+  cursor: default; /* Change cursor to indicate the button is not clickable */
+}
+
+/* Typing Indicator Spacing */
+.typing-indicator {
+  text-align: center;
+}
+
+/* Typing dots animation */
+
+@keyframes dotFlashing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot-flashing {
+  margin-left: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #3498db;
+  display: inline-block;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot-flashing:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.chat-history p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .chat-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .chat-history {
+    min-height: 35vh;
+  }
+}
